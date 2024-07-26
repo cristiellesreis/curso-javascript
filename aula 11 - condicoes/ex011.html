@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+
+    <style>
+        body{
+            font: normal 15pt Arial;
+            background: rgb(206, 250, 177);
+        }
+
+        input{
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        button{
+            height: 40px;
+            width: 100px;
+            border-radius: 10px;
+            color: rgb(206, 250, 177);
+            background-color: black;
+            font: normal 15pt Arial;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Qual é a sua Nacionalidade</h1>
+
+    Digite o país em que você nasceu: <input type="text" name="pais" id="pais" placeholder="Seu país">
+    <button onclick="verificar()">Analisar</button>
+    <div id="res"></div>
+    
+    
+    <script>
+
+        function verificar(){
+            var país = window.document.querySelector('input#pais')
+            var res = window.document.querySelector('div#res')
+            var nome = String(país.value)
+
+            res.innerHTML = `<p>Você nasceu no <strong>${nome}</strong>!</p> `
+
+
+            if (nome == 'Brasil'){
+                res.innerHTML += '<strong>Você é brasileiro!</strong> '
+            }else{
+                res.innerHTML += '<strong>Você é estrangeiro!</strong> '
+            }
+            
+        }
+
+    </script>
+</body>
+</html>
